@@ -12,5 +12,136 @@
 
     <div style="margin-top:50px; padding-top:10px;"></div>
     <!-- main contents   -->
-<?php include("dashboard.php") ?>
+    <!-- 		exchange varchar(10) not null,
+		symbol varchar(25) not null,
+		/* --whitelist or blacklist */
+		category varchar(120),
+		/* --exchange_symbol = exchange + '_' + symbol */
+		exchange_symbol varchar(25),
+		trend_monthly varchar(120),
+		trend_weekly varchar(120),
+		trend_daily varchar(120),
+		trend_60min varchar(120),
+		group_name varchar(120),
+		price DOUBLE(19,4),
+		sector varchar(20),
+		industry varchar(20),
+		mcap double(19,4),
+		volume double(19,4)); -->
+
+    <div class="container">
+  <div class="row">
+<div class="col-sm-12">
+  <ul class="list-inline">
+   <li><button class="btn btn-success">NSE NIFTY</button></li>
+   <li><button class="btn btn-success">NSE 500</button></li>
+   <li><button class="btn btn-success">NSE FO STOCK</button></li>
+   <li><button class="btn btn-success">MCX COMMODITY</button></li>
+   <li><button class="btn btn-success">NSE CDS</button></li>
+   <li><button class="btn btn-success">NSE FO</button></li>
+   <li><button class="btn btn-success">NSE FUTURE</button></li>
+   <li><button class="btn btn-success">NSE OPTION</button></li>
+   <li><button class="btn btn-success">NSE ANY</button></li>
+
+  </ul>
+</div>
+</div>
+</div>
+
+<!-- show_watchlist.php -->
+<?php 
+$servername = "localhost:3308";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+$con = mysqli_connect($servername,$username,$password,$dbname);
+// Check connection
+if (mysqli_connect_errno())
+{
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+else{
+  echo "connected ";
+}?>
+
+
+
+<div class="container-fluid">
+<table class="table table-bordered table-hover table-responsive table-striped">
+<tr>
+<th>ID</th>
+<th>Exchange</th>
+<th>Symbol</th>
+<th>category</th>
+<th>exchange_symbol</th>
+<th>trend_monthly</th>
+<th>trend_weekly</th>
+<th>trend_daily</th>
+<th>trend_60min</th>
+<th>group_name</th>
+<th>price</th>
+<th>sector</th>
+<th>industry</th>
+<th>mcap</th>
+<th>volume</th>
+</tr>
+
+<?php
+$query=mysqli_query($con,"select * from watchlist");
+$cnt=1;
+while($row=mysqli_fetch_array($query))
+{
+?>
+<tr>
+<td><?php echo "ID"?> </td>
+<td><?php echo $row['exchange'];?></td>
+<td><?php echo $row['symbol'];?></td>
+<td><?php echo $row['category'];?></td>
+<td><?php echo $row['exchange_symbol'];?></td>
+<td><?php echo $row['trend_monthly'];?></td>
+<td><?php echo $row['trend_weekly'];?></td>
+<td><?php echo $row['trend_daily'];?></td>
+<td><?php echo $row['trend_60min'];?></td>
+<td><?php echo $row['group_name'];?></td>
+<td><?php echo $row['price'];?></td>
+<td><?php echo $row['sector'];?></td>
+<td><?php echo $row['industry'];?></td>
+<td><?php echo $row['mcap'];?></td>
+<td><?php echo $row['volume'];?></td>
+ </tr>
+ <?php
+$cnt=$cnt+1;
+ } ?>
+</table>
+</div>
+
+<!-- add_watchlist.php -->
+<div class="container-fluid">
+<form action="/admin/add_watchlist.php">
+<ul class="list-inline">
+<li><input type="text" placeholder="ID" style="width:70px"></li>
+<li><input type="button" onclick=window.alert("LOAD") value="LOAD" style="width:100px"></li>
+
+<li><input type="text" placeholder="Exchange" style="width:70px"></li>
+<li><input type="text" placeholder="symbol" style="width:100px"></li>
+<li> <select name="" id="">
+<option value="Select Category" style="width:70px">Select Category</option>
+<option value="Blacklist">Blacklist</option>
+<option value="Whitelist">Whitelist</option>
+
+</select>
+</li>
+<li><input type="text" placeholder="sector" style="width:100px"></li>
+<li><input type="text" placeholder="industry" style="width:100px"></li>
+<li><input type="button" onclick=window.alert("ADD") value="ADD" style="width:100px"></li>
+<li><input type="button" onclick=window.alert("UPDATE") value="UPDATE" style="width:100px"></li>
+<li><input type="button" onclick=window.alert("DELETE") value="DELETE" style="width:100px"></li>
+<li><input type="reset" value="Reset" style="width:100px"></li>
+</ul>
+</form>
+</div>
+<?php ?>
+
+<div style="margin-top:50px; padding-top:10px;"></div>
 <?php require("foot.php"); ?>
