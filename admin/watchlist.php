@@ -12,22 +12,6 @@
 
     <div style="margin-top:50px; padding-top:10px;"></div>
     <!-- main contents   -->
-    <!-- 		exchange varchar(10) not null,
-		symbol varchar(25) not null,
-		/* --whitelist or blacklist */
-		category varchar(120),
-		/* --exchange_symbol = exchange + '_' + symbol */
-		exchange_symbol varchar(25),
-		trend_monthly varchar(120),
-		trend_weekly varchar(120),
-		trend_daily varchar(120),
-		trend_60min varchar(120),
-		group_name varchar(120),
-		price DOUBLE(19,4),
-		sector varchar(20),
-		industry varchar(20),
-		mcap double(19,4),
-		volume double(19,4)); -->
 
     <div class="container">
   <div class="row">
@@ -47,24 +31,6 @@
 </div>
 </div>
 </div>
-
-<!-- show_watchlist.php -->
-<?php 
-$servername = "localhost:3308";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-$con = mysqli_connect($servername,$username,$password,$dbname);
-// Check connection
-if (mysqli_connect_errno())
-{
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-else{
-  echo "connected ";
-}?>
-
 
 
 <div class="container-fluid">
@@ -86,6 +52,23 @@ else{
 <th>mcap</th>
 <th>volume</th>
 </tr>
+<!-- show_watchlist.php -->
+<?php 
+$servername = "localhost:3308";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+$con = mysqli_connect($servername,$username,$password,$dbname);
+// Check connection
+if (mysqli_connect_errno())
+{
+ echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+else{
+  echo "connected ";
+}?>
+
 
 <?php
 $query=mysqli_query($con,"select * from watchlist");
