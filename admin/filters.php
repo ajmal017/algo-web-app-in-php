@@ -43,6 +43,8 @@
   </div>
 </div>
 
+<script src='jquery-3.3.1.js'></script>
+<script src='./filters.js'></script>
 
 <!-- space setup -->
 <div style="margin-bottom:50px; padding-bottom:10px;"></div>
