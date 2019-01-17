@@ -1,5 +1,11 @@
 <?php require("head.php"); ?>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.filters').css({"background-color": "lightblue", "font-size": "120%"});
+  });
+  </script>
+
     <!-- top menu -->
     <nav class="navbar navbar-default navbar-fixed-top  pagesetup">
       <?php require("dashboard_menu.php"); ?>
@@ -17,26 +23,30 @@
   <div class="row">
 <div class="col-sm-8 col-sm-offset-2">
   <ul class="list-inline">
-   <li><button class="btn btn-success">Long Term</button></li>
-   <li><button class="btn btn-success">Short Term</button></li>
-   <li><button class="btn btn-success">Swing Trade</button></li>
-   <li><button class="btn btn-success">BTST</button></li>
-   <li><button class="btn btn-success">Intraday</button></li>
+   <li><button class="btn btn-success" id="long">Long Term</button></li>
+   <li><button class="btn btn-success" id="short">Short Term</button></li>
+   <li><button class="btn btn-success" id="short">Swing Trade</button></li>
+   <li><button class="btn btn-success" id="btst">BTST</button></li>
+   <li><button class="btn btn-success" id="intraday">Intraday</button></li>
+   <li>button Clicked : </li>
+   <li><button class="btn btn-warning"><span id="clicked">None</span> </button></li>
   </ul>
 </div>
 </div>
-
-
-
-<!--ajax Data -->
-<div class="row">
-  <table class="table table-striped table-hover table-bordered">
-  <?php for($i=0; $i<100;$i++) {
-    echo "<tr><td>".$i."</td><td>".$i*$i."</td></tr>";
-  } ?>
-  </table>
 </div>
+
+
+    <!-- main contents   -->
+<div class="container">
+  <div id="data">
+    <h1>Please click one of above button</h1>
+  </div>
 </div>
+
+
 <!-- space setup -->
 <div style="margin-bottom:50px; padding-bottom:10px;"></div>
-<?php require("foot.php"); ?>
+
+
+</body>
+</html>

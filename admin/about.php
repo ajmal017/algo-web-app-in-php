@@ -26,4 +26,7 @@
         <div class="col-sm-2"></div>
     </div>
 </div>
-<?php require("foot.php"); ?>
+
+</body>
+
+</html>

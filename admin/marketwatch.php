@@ -1,5 +1,11 @@
 <?php require("head.php"); ?>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.marketwatch').css({"background-color": "lightblue", "font-size": "120%"});
+  });
+  </script>
+
     <!-- top menu -->
     <nav class="navbar navbar-default navbar-fixed-top  pagesetup">
       <?php require("dashboard_menu.php"); ?>
@@ -89,4 +95,8 @@ $cnt=$cnt+1;
 </div>
 <!-- space setup -->
 <div style="margin-bottom:50px; padding-bottom:10px;"></div>
-<?php require("foot.php"); ?>
+
+
+</body>
+
+</html>

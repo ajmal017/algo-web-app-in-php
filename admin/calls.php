@@ -1,5 +1,11 @@
 <?php require("head.php"); ?>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.calls').css({"background-color": "lightblue", "font-size": "120%"});
+  });
+  </script>
+
     <!-- top menu -->
     <nav class="navbar navbar-default navbar-fixed-top  pagesetup">
       <?php require("dashboard_menu.php"); ?>
@@ -33,64 +39,16 @@
 </div>
 </div>
 
+<div class="container-fluid">
+<div id="data">Please Click one of the above buttuon</div>
+  
+</div>
 
 
 <!--ohlc data -->
 
-<div class="container">
-<table class="table table-bordered table-hover table-responsive table-striped">
-<tr>
-<th>ID(TimeStamp)</th>
-<th>Exchange</th>
-<th>Symbol</th>
-<th>date_and_time</th>
-<th>open_price</th>
-<th>high_price</th>
-<th>low_price</th>
-<th>close_price</th>
-<th>volume</th>
-<th>cp</th>
-</tr>
-
-<?php 
-$servername = "localhost:3308";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-$con = mysqli_connect($servername,$username,$password,$dbname);
-// Check connection
-if (mysqli_connect_errno())
-{
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-else{
-  echo "connected ";
-}?>
-
-<?php
-$query=mysqli_query($con,"select * from ohlc_monthly");
-$cnt=1;
-while($row=mysqli_fetch_array($query))
-{
-?>
-<tr>
-<td><?php echo "ID"?> </td>
-<td><?php echo $row['exchange'];?></td>
-<td><?php echo $row['symbol'];?></td>
-<td><?php echo $row['date_and_time'];?></td>
-<td><?php echo $row['open_price'];?></td>
-<td><?php echo $row['high_price'];?></td>
-<td><?php echo $row['low_price'];?></td>
-<td><?php echo $row['close_price'];?></td>
-<td><?php echo $row['volume'];?></td>
-<td><?php echo $row['cp'];?></td>
- </tr>
- <?php
-$cnt=$cnt+1;
- } ?>
-</table>
-</div>
 <!-- space setup -->
 <div style="margin-bottom:50px; padding-bottom:10px;"></div>
-<?php require("foot.php"); ?>
+
+</body>
+</html>
