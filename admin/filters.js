@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $('#intraday').click(function() {
         // alert('gc55964');
-        $.get('./filter/intraday.php', function(data, status) {
+        $.get('./filters/intraday.php', function(data, status) {
             // alert(data);
             $('#data').html(data);
             $('#clicked').html('INTRADAY');

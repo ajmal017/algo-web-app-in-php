@@ -5,9 +5,9 @@ $arr = json_decode($string,true);?>
 
 
 
-<!-- BTST BUY  Confirmed Filter -->
+<!-- Intraday BUY  Confirmed Filter -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-primary text-center">BTST BUY <strong> Confirmed  </strong>Filter</caption>
+<caption class="bg-primary text-center">Intraday BUY <strong> Confirmed  </strong>Filter</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
@@ -35,9 +35,9 @@ foreach($nse_conf_buy as $data){
 </table>
 
 
-<!-- BTST SELL  Confirmed Filter -->
+<!-- Intraday SELL  Confirmed Filter -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-danger text-center">BTST SELL <strong> Confirmed  </strong> Filter</caption>
+<caption class="bg-danger text-center">Intraday SELL <strong> Confirmed  </strong> Filter</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
@@ -66,9 +66,9 @@ foreach($nse_conf_buy as $data){
 
 
 
-<!-- BTST BUY Unonfirmed Filter -->
+<!-- Intraday BUY Unonfirmed Filter -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-primary text-center">BTST BUY <strong> Unonfirmed  </strong> Filter</caption>
+<caption class="bg-primary text-center">Intraday BUY <strong> Unonfirmed  </strong> Filter</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
@@ -101,9 +101,9 @@ foreach($nse_conf_buy as $data){
 
 
 
-<!-- BTST SELL Unonfirmed Filter -->
+<!-- Intraday SELL Unonfirmed Filter -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-info text-center">BTST SELL <strong> Unonfirmed  </strong> Filter</caption>
+<caption class="bg-info text-center">Intraday SELL <strong> Unonfirmed  </strong> Filter</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
