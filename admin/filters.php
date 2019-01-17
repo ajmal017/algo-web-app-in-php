@@ -17,13 +17,11 @@
   <div class="row">
 <div class="col-sm-8 col-sm-offset-2">
   <ul class="list-inline">
-   <li><button class="btn btn-success">Monthly</button></li>
-   <li><button class="btn btn-success">Weekly</button></li>
-   <li><button class="btn btn-success">Daily</button></li>
-   <li><button class="btn btn-success">60 Min</button></li>
-   <li><button class="btn btn-success">15 Min</button></li>
-   <li><button class="btn btn-success">5 Min</button></li>
-   <li><button class="btn btn-success">1 Min</button></li>
+   <li><button class="btn btn-success">Long Term</button></li>
+   <li><button class="btn btn-success">Short Term</button></li>
+   <li><button class="btn btn-success">Swing Trade</button></li>
+   <li><button class="btn btn-success">BTST</button></li>
+   <li><button class="btn btn-success">Intraday</button></li>
   </ul>
 </div>
 </div>

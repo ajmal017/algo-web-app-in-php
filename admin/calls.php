@@ -13,17 +13,21 @@
     <div style="margin-top:50px; padding-top:10px;"></div>
     
     <!-- Ajax Menu   -->
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-12">
   <ul class="list-inline">
-   <li><button class="btn btn-success">Monthly</button></li>
-   <li><button class="btn btn-success">Weekly</button></li>
-   <li><button class="btn btn-success">Daily</button></li>
-   <li><button class="btn btn-success">60 Min</button></li>
-   <li><button class="btn btn-success">15 Min</button></li>
-   <li><button class="btn btn-success">5 Min</button></li>
-   <li><button class="btn btn-success">1 Min</button></li>
+   <li><button class="btn btn-success">Long T. Daily</button></li>
+   <li><button class="btn btn-success">Long T. Weekly</button></li>
+   <li><button class="btn btn-success">Short T. 60 min</button></li>
+   <li><button class="btn btn-success">Short T. Daily</button></li>
+   <li><button class="btn btn-success">Swing T. 15 min</button></li>
+   <li><button class="btn btn-success">Swing T. 60 min</button></li>
+   <li><button class="btn btn-success">BTST 5 min</button></li>
+   <li><button class="btn btn-success">BTST 15 min</button></li>
+   <li><button class="btn btn-success">Intraday 1 min</button></li>
+   <li><button class="btn btn-success">Intraday 5 min</button></li>
+
   </ul>
 </div>
 </div>
