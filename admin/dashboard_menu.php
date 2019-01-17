@@ -12,6 +12,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/admin/">Home</a></li>
                 <li><a href="/admin/Settings.php">Settings</a> </li>
+                <li><a href="/admin/marketwatch.php">MarketWatch</a></li>
                 <li><a href="/admin/watchlist.php">Watchlist</a></li>
                 <li><a href="/admin/acountstatus.php">Account Status</a> </li>
                 <li><a href="/admin/signals.php">Signals</a></li>
