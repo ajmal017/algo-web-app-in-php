@@ -1,64 +1,52 @@
 <?php
 
-$string = file_get_contents('../data/filters/intraday.json');
+$string = file_get_contents('../data/calls/intraday_5min.json');
 $arr = json_decode($string,true);?>
 
 
 
-<!-- Intraday BUY  Confirmed Filter -->
+<!-- BTST BUY  Confirmed Calls -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-primary text-center">Intraday BUY <strong> Confirmed  </strong>Filter</caption>
+<caption class="bg-primary text-center">BTST BUY <strong> Confirmed  </strong>Calls</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
 <th>token</th>
-<th>Higher Time</th>
-<th>Lower Time</th>
 <th>Chart</th>
 </tr>
 <?php   
 $nse_conf_buy = $arr['NSE']['confirmed']['BUY'];
 foreach($nse_conf_buy as $data){
     $symbol= $data['symbol'];
-    $token = $data['token'];
-    $higher_time = substr($data['timestamp-higher'],0,19);
-    $lower_time =substr($data['timestamp-lower'],0,19);        ?>
+    $token = $data['token'];      ?>
         <tr>
             <td><?php echo "NSE";?></td>
             <td class="bg-success"><?php echo $symbol;?></td>
             <td><?php echo $token;  ?></td>
-            <td><?php echo $higher_time;  ?></td>
-            <td><?php echo $lower_time;  ?></td>
             <td><?php echo "chartlink";  ?></td>
         </tr>
 <?php } ?>
 </table>
 
 
-<!-- Intraday SELL  Confirmed Filter -->
+<!-- BTST SELL  Confirmed Calls -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-danger text-center">Intraday SELL <strong> Confirmed  </strong> Filter</caption>
+<caption class="bg-danger text-center">BTST SELL <strong> Confirmed  </strong> Calls</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
 <th>token</th>
-<th>Higher Time</th>
-<th>Lower Time</th>
 <th>Chart</th>
 </tr>
 <?php   
 $nse_conf_buy = $arr['NSE']['confirmed']['SELL'];
 foreach($nse_conf_buy as $data){
     $symbol= $data['symbol'];
-    $token = $data['token'];
-    $higher_time = substr($data['timestamp-higher'],0,19);
-    $lower_time =substr($data['timestamp-lower'],0,19);        ?>
+    $token = $data['token'];     ?>
         <tr>
             <td><?php echo "NSE";?></td>
             <td class="bg-danger"><?php echo $symbol;?></td>
             <td><?php echo $token;  ?></td>
-            <td><?php echo $higher_time;  ?></td>
-            <td><?php echo $lower_time;  ?></td>
             <td><?php echo "chartlink";  ?></td>
         </tr>
 <?php } ?>
@@ -66,30 +54,24 @@ foreach($nse_conf_buy as $data){
 
 
 
-<!-- Intraday BUY Unonfirmed Filter -->
+<!-- BTST BUY Unonfirmed Calls -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-primary text-center">Intraday BUY <strong> Unonfirmed  </strong> Filter</caption>
+<caption class="bg-primary text-center">BTST BUY <strong> Unonfirmed  </strong> Calls</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
 <th>token</th>
-<th>Higher Time</th>
-<th>Lower Time</th>
 <th>Chart</th>
 </tr>
 <?php   
 $nse_conf_buy = $arr['NSE']['unconfirmed']['BUY'];
 foreach($nse_conf_buy as $data){
     $symbol= $data['symbol'];
-    $token = $data['token'];
-    $higher_time = substr($data['timestamp-higher'],0,19);
-    $lower_time =substr($data['timestamp-lower'],0,19);        ?>
+    $token = $data['token'];      ?>
         <tr>
             <td><?php echo "NSE";?></td>
             <td class="bg-danger"><?php echo $symbol;?></td>
             <td><?php echo $token;  ?></td>
-            <td><?php echo $higher_time;  ?></td>
-            <td><?php echo $lower_time;  ?></td>
             <td><?php echo "chartlink";  ?></td>
         </tr>
 <?php } ?>
@@ -101,30 +83,24 @@ foreach($nse_conf_buy as $data){
 
 
 
-<!-- Intraday SELL Unonfirmed Filter -->
+<!-- BTST SELL Unonfirmed Calls -->
 <table class="table table-bordered table-hover table-responsive table-striped">
-<caption class="bg-info text-center">Intraday SELL <strong> Unonfirmed  </strong> Filter</caption>
+<caption class="bg-info text-center">BTST SELL <strong> Unonfirmed  </strong> Calls</caption>
 <tr >
 <th>Exchange</th>
 <th>Symbol</th>
 <th>token</th>
-<th>Higher Time</th>
-<th>Lower Time</th>
 <th>Chart</th>
 </tr>
 <?php   
 $nse_conf_buy = $arr['NSE']['unconfirmed']['SELL'];
 foreach($nse_conf_buy as $data){
     $symbol= $data['symbol'];
-    $token = $data['token'];
-    $higher_time = substr($data['timestamp-higher'],0,19);
-    $lower_time =substr($data['timestamp-lower'],0,19);        ?>
+    $token = $data['token'];      ?>
         <tr>
             <td><?php echo "NSE";?></td>
             <td class="bg-danger"><?php echo $symbol;?></td>
             <td><?php echo $token;  ?></td>
-            <td><?php echo $higher_time;  ?></td>
-            <td><?php echo $lower_time;  ?></td>
             <td><?php echo "chartlink";  ?></td>
         </tr>
 <?php } ?>

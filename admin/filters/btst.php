@@ -1,6 +1,6 @@
 <?php
 
-$string = file_get_contents('../data/filter/btst.json');
+$string = file_get_contents('../data/filters/btst.json');
 $arr = json_decode($string,true);?>
 
 
