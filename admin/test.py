@@ -1,5 +1,15 @@
 
-st = "hello guddu chauhan \n"*5000
 
-with open('text.txt','w') as f:
-    f.write(st)
+from time import sleep
+from datetime import datetime ,timedelta
+
+
+
+data = []
+
+for d in data:
+    print(d['name'])
+
+
+
+

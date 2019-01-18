@@ -1,0 +1,5 @@
+-ongc:
+    SMA:
+        -SMA50:UP
+        -SMA100:UP
+        -SMA200:UP
