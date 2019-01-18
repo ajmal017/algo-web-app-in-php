@@ -24,17 +24,17 @@
   <div class="row">
 <div class="col-sm-12">
   <ul class="list-inline">
-   <li><button class="btn btn-success" id="long_term_day">Long Day</button></li>
-   <li><button class="btn btn-success" id="long_term_week">Long Week</button></li>
-   <li><button class="btn btn-success" id="short_term_60min">Short 60min</button></li>
-   <li><button class="btn btn-success" id="short_term_day">Short Day</button></li>
-   <li><button class="btn btn-success" id="swing_trade_15min">Swing 15min</button></li>
-   <li><button class="btn btn-success" id="swing_trade_60min">Swing 60min</button></li>
-   <li><button class="btn btn-success" id="btst_5min">BTST 5min</button></li>
-   <li><button class="btn btn-success" id="btst_15min">BTST 15min</button></li>
-   <li><button class="btn btn-success" id="intraday_1min">Intra 1min</button></li>
-   <li><button class="btn btn-success" id="intraday_5min">Intra 5min</button></li>
-   <li><button class="btn btn-warning"><span id="clicked">None</span> </button></li>
+   <li><a href="" class="btn btn-info">Long Day</a></li>
+   <li><a href="" class="btn btn-info">Long Week</a></li>
+   <li><a href="" class="btn btn-info">Short 60min</a></li>
+   <li><a href="" class="btn btn-info">Short Day</a></li>
+   <li><a href="" class="btn btn-info">Swing 15mi</a></li>
+   <li><a href="" class="btn btn-info">Swing 60mi</a></li>
+   <li><a href="./calls/btst_15min.php" class="btn btn-info">BTST 5min</a></li>
+   <li><a href="./calls/btst_15min.php" class="btn btn-info">BTST 15min</a></li>
+   <li><a href="./calls/intraday_1min.php" class="btn btn-info">Intra 1min</a></li>
+   <li><a href="./calls/intraday_5min.php" class="btn btn-info">Intra 5min</a></li>
+  
 
   </ul>
 </div>
@@ -42,10 +42,16 @@
 </div>
 
 <div class="container-fluid">
+<div id="data">Please Click one of the above buttuon</div>
+  
+</div>
+
+
+<!--ohlc data -->
 
 <?php
 
-$string = file_get_contents('./data/calls/btst_5min.json');
+$string = file_get_contents('../data/calls/btst_5min.json');
 $arr = json_decode($string,true);?>
 
 
@@ -70,7 +76,7 @@ foreach($nse_conf_buy as $data){
             <td class="bg-success"><?php echo $symbol;?></td>
             <td><?php echo $token;  ?></td>
             <!-- zerodha button -->
-            <td><form action="#"> <kite-button href="#" data-kite="z8lgeb6fk65uargj"
+            <td class="btn"><form action="#"> <kite-button href="#" data-kite="z8lgeb6fk65uargj"
             data-exchange="NSE"
             data-product="MIS"
             data-tradingsymbol="<?php echo $symbol;  ?>"
@@ -163,21 +169,7 @@ foreach($nse_conf_buy as $data){
 <?php } ?>
 </table>
 
-<script src="https://kite.trade/publisher.js?v=3"></script>
 
-
-<!-- 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script> -->
-
-  
-</div>
-
-
-<!--ohlc data -->
-<!-- <script src='jquery-3.3.1.js'></script> -->
 <script src='./calls.js'></script>
 
 <!-- space setup -->

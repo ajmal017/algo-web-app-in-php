@@ -24,17 +24,17 @@
   <div class="row">
 <div class="col-sm-12">
   <ul class="list-inline">
-   <li><button class="btn btn-success" id="long_term_day">Long Day</button></li>
-   <li><button class="btn btn-success" id="long_term_week">Long Week</button></li>
-   <li><button class="btn btn-success" id="short_term_60min">Short 60min</button></li>
-   <li><button class="btn btn-success" id="short_term_day">Short Day</button></li>
-   <li><button class="btn btn-success" id="swing_trade_15min">Swing 15min</button></li>
-   <li><button class="btn btn-success" id="swing_trade_60min">Swing 60min</button></li>
-   <li><button class="btn btn-success" id="btst_5min">BTST 5min</button></li>
-   <li><button class="btn btn-success" id="btst_15min">BTST 15min</button></li>
-   <li><button class="btn btn-success" id="intraday_1min">Intra 1min</button></li>
-   <li><button class="btn btn-success" id="intraday_5min">Intra 5min</button></li>
-   <li><button class="btn btn-warning"><span id="clicked">None</span> </button></li>
+   <li><a href="" class="btn btn-info">Long Day</a></li>
+   <li><a href="" class="btn btn-info">Long Week</a></li>
+   <li><a href="" class="btn btn-info">Short 60min</a></li>
+   <li><a href="" class="btn btn-info">Short Day</a></li>
+   <li><a href="" class="btn btn-info">Swing 15mi</a></li>
+   <li><a href="" class="btn btn-info">Swing 60mi</a></li>
+   <li><a href="./calls/btst_15min.php" class="btn btn-info">BTST 5min</a></li>
+   <li><a href="./calls/btst_15min.php" class="btn btn-info">BTST 15min</a></li>
+   <li><a href="./calls/intraday_1min.php" class="btn btn-info">Intra 1min</a></li>
+   <li><a href="./calls/intraday_5min.php" class="btn btn-info">Intra 5min</a></li>
+  
 
   </ul>
 </div>
