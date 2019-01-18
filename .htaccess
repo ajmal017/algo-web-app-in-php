@@ -1,0 +1,14 @@
+<Files ~ "\.pkl$">
+  Order allow,deny
+  Deny from all
+</Files>
+
+<Files ~ "\.py$">
+  Order allow,deny
+  Deny from all
+</Files>
+
+<Files ~ "\.json$">
+  Order allow,deny
+  Deny from all
+</Files>
