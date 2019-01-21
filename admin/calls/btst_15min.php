@@ -26,7 +26,7 @@
    <li id="d"><a href="" class="btn btn-info">Short Day</a></li>
    <li id="e"><a href="" class="btn btn-info">Swing 15mi</a></li>
    <li id="f"><a href="" class="btn btn-info">Swing 60mi</a></li>
-   <li id="g"><a href="./btst_15min.php" class="btn btn-info">BTST 5min</a></li>
+   <li id="g"><a href="./btst_5min.php" class="btn btn-info">BTST 5min</a></li>
    <li id="h"><a href="./btst_15min.php" class="btn btn-danger">BTST 15min</a></li>
    <li id="i"><a href="./intraday_1min.php" class="btn btn-info">Intra 1min</a></li>
    <li id="j"><a href="./intraday_5min.php" class="btn btn-info">Intra 5min</a></li>

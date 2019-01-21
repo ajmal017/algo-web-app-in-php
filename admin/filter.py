@@ -1,22 +1,10 @@
 
-# data/signals/day.json
-# signals -> filter
-# data/filter/btst.jsoon
-
-
 import json
 from time import sleep
+from datetime import datetime
 
 
-# with open('./data/signals/day.json','r') as dayJsonFile:
-    # data = json.load(dayJsonFile)
-
-
-
-# print(daystocks['NSE'])
-# print('*'*50)
-
-def filter(higher_time_frame_file,lower_time_frame_file):
+def filters(higher_time_frame_file,lower_time_frame_file):
     unconf_buy_list = []
     unconf_sell_list = []
     conf_buy_list =[]
@@ -77,19 +65,22 @@ def filter(higher_time_frame_file,lower_time_frame_file):
 
     return final_signal
 
-# final_signal = filter('./data/signals/day.json','./data/signals/day.json')
-# print(final_signal)
+
+
 
 while True:
-    btst_filter_json = filter('./data/signals/day.json','./data/signals/hour.json')
-    with open('./data/filter/btst.json','w') as wfp:
+    print("btst is running.......",datetime.now())
+    btst_filter_json = filters('./data/signals/day.json','./data/signals/hour.json')
+    with open('./data/filters/btst.json','w') as wfp:
         json.dump(btst_filter_json ,wfp)
 
-    intraday_filter_json = filter('./data/signals/hour.json','./data/signals/15min.json')
-    with open('./data/filter/intraday.json','w') as wfp:
+    print('intraday is running ....',datetime.now())
+    intraday_filter_json = filters('./data/signals/hour.json','./data/signals/15min.json')
+    with open('./data/filters/intraday.json','w') as wfp:
         json.dump(intraday_filter_json ,wfp)
+    
   
 
 
-    sleep(20)
+
 

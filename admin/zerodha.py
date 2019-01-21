@@ -1,27 +1,11 @@
-from time import time, strftime
+from time import time, strftime, sleep
 from datetime import datetime, timedelta
 import requests, json
 
 def currenttimestamp():
     print(strftime('%X %x %Z'))
     return round(time()*1000)
-
-# https://kitecharts-aws.zerodha.com/api/chart/
-# 1270529
-# /
-# 5minute
-# ?public_token=
-# nkozx5UiKlto2JU0lLjyxKX0GdcyRxJG
-# &user_id=
-# ZT8569
-# &api_key=kitefront&access_token=
-# IlND2uszcyjE27wlrGl3SabmF70qOKc1
-# &from=2019-01-04
-# &to=
-# 2019-01-11
-# &ciqrandom=
-# 1547207141978
-
+    
 class Zerodha:
     def __init__(self,public_token,access_token,userid):
         self.user_id = userid
@@ -55,14 +39,21 @@ class Zerodha:
         self.from_url13 = from_day
         self.url = self.url1 + self.token_url2 + self.url3 + self.time_frame_url45 + self.url6 + self.public_token_url7 + self.url8 + self.url9 + self.url10 +self.access_token_url11 + self.url12 + self.from_url13 + self.url14 + self.to_url15 + self.url16 + self.url17
         # print(self.url)
-        resp = requests.get(self.url)
-        data = json.loads(resp.text)
-        # print(data)
-        if data['status'] == 'success':
-            ohlc = data['data']['candles']
-            return ohlc
-        else:
-            print("Error :  No data")
+        success = False
+        while not success:
+            try:
+                resp = requests.get(self.url,timeout=(7,10))
+                data = json.loads(resp.text)
+                if data['status'] == 'success':
+                    ohlc = data['data']['candles']
+                    if len(ohlc):
+                        success = True
+                        sleep(0.5)
+                        return ohlc
+            except:
+                print("Error :  No data")
+                sleep(1)
+                continue
 
     def place_order(self,exchange,tradingsymbol,transaction_type,order_type,quantity,
         price,product,validity,disclosed_quantity,trigger_price,squareoff,stoploss,trailing_stoploss,variety):
@@ -78,22 +69,3 @@ class Zerodha:
         print("*"*20)
         print("content : ",resp.content)
         print("*"*20)
-
-
-
-
-
-public_token="XwCqLJAhQXng5pm0u69HVp02cwUbZPCB"
-user_id="ZT8569"
-access_token="IlND2uszcyjE27wlrGl3SabmF70qOKc1"
-token ="1270529"
-
-
-# curl "https://api.kite.trade/instruments/NSE"  
-
-
-# zerodha = Zerodha(public_token,access_token,user_id)
-
-# print(zerodha.get_ohlc("5minute",'1270529',5))
-
-# zerodha.place_order("NSE","GAIL","BUY","MARKET",1,0,"CNC","DAY",0,0,0,0,0,"regular")
