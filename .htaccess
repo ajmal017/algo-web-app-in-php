@@ -12,3 +12,9 @@
   Order allow,deny
   Deny from all
 </Files>
+
+
+<Files ~ "\.pem$">
+  Order allow,deny
+  Deny from all
+</Files>
